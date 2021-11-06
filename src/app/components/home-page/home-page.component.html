@@ -1,0 +1,298 @@
+<div class="container bootstrap snippet">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="margin-left: 300px;">Personal Infomation</h1>
+        </div>
+        <hr>
+        <!-- <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a></div> -->
+    </div>
+    <div class="row">
+        <hr>
+        <div class="col-sm-3">
+            <div class="text-center" *ngIf="afAuth.authState | async as user">
+                <img src="{{user.photoURL}}" class="avatar img-circle img-thumbnail" alt="avatar" style="width: 220px;height: 220px">
+                <h6>Upload a different photo...</h6>
+                <input type="file" class="text-center center-block file-upload" style="display: none;">
+            </div>
+        </div>
+        <!--/col-3-->
+        <div class="col-sm-9">
+            <div class="tab-content">
+                <div class="tab-pane active" id="home">
+                    <nav *ngIf="afAuth.authState | async as user">
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="" role="tab" aria-controls="nav-home" aria-selected="true">Infomation</a>
+                          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="" role="tab" aria-controls="nav-profile" aria-selected="false">Personal</a>
+                          <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="" role="tab" aria-controls="nav-contact" aria-selected="false">Company</a>
+                        </div>
+                      </nav>
+                      <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <br>
+                            <form class="form" action="##" method="post" id="registrationForm">
+                                <div class="form-group">
+        
+                                    <div class="col-xs-6" *ngIf="afAuth.authState | async as user">
+                                        <label for="first_name">
+                                            <h4>UID</h4>
+                                        </label>
+                                        <input type="text" class="form-control" name="first_name" id="first_name"
+                                            placeholder="first name" value="{{user.uid}}" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+        
+                                    <div class="col-xs-6" *ngIf="afAuth.authState | async as user">
+                                        <label for="first_name">
+                                            <h4>First name</h4>
+                                        </label>
+                                        <input type="text" class="form-control" name="first_name" id="first_name"
+                                            placeholder="first name" value="{{user.displayName}}">
+                                    </div>
+                                </div>
+        
+                                <div class="form-group">
+        
+                                    <div class="col-xs-6" *ngIf="afAuth.authState | async as user">
+                                        <label for="first_name">
+                                            <h4>Email</h4>
+                                        </label>
+                                        <input type="text" class="form-control" name="first_name" id="first_name"
+                                            placeholder="first name" value="{{user.email}}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+        
+                                    <div class="col-xs-6" *ngIf="afAuth.authState | async as user">
+                                        <label for="first_name">
+                                            <h4>Company</h4>
+                                        </label>
+                                        <input type="text" class="form-control" name="first_name" id="first_name"
+                                            placeholder="*******" value="{{user.Company}}">
+                                    </div>
+                                </div>
+                                <div class="form-group" *ngIf="afAuth.authState | async as user">
+                                    <div class="col-xs-12">
+                                        <br>
+                                        <button class="btn btn-lg btn-success" type="submit"><i
+                                                class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                        <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i>
+                                            Reset</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+                      </div>
+                    
+
+                    <hr>
+
+                </div>
+                <!--/tab-pane-->
+                <div class="tab-pane" id="messages">
+
+                    <h2></h2>
+
+                    <hr>
+                    <form class="form" action="##" method="post" id="registrationForm">
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="first_name">
+                                    <h4>First name</h4>
+                                </label>
+                                <input type="text" class="form-control" name="first_name" id="first_name"
+                                    placeholder="first name" title="enter your first name if any.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="last_name">
+                                    <h4>Last name</h4>
+                                </label>
+                                <input type="text" class="form-control" name="last_name" id="last_name"
+                                    placeholder="last name" title="enter your last name if any.">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="phone">
+                                    <h4>Phone</h4>
+                                </label>
+                                <input type="text" class="form-control" name="phone" id="phone"
+                                    placeholder="enter phone" title="enter your phone number if any.">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-6">
+                                <label for="mobile">
+                                    <h4>Mobile</h4>
+                                </label>
+                                <input type="text" class="form-control" name="mobile" id="mobile"
+                                    placeholder="enter mobile number" title="enter your mobile number if any.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="email">
+                                    <h4>Email</h4>
+                                </label>
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="you@email.com" title="enter your email.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="email">
+                                    <h4>Location</h4>
+                                </label>
+                                <input type="email" class="form-control" id="location" placeholder="somewhere"
+                                    title="enter a location">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="password">
+                                    <h4>Password</h4>
+                                </label>
+                                <input type="password" class="form-control" name="password" id="password"
+                                    placeholder="password" title="enter your password.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="password2">
+                                    <h4>Verify</h4>
+                                </label>
+                                <input type="password" class="form-control" name="password2" id="password2"
+                                    placeholder="password2" title="enter your password2.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <br>
+                                <button class="btn btn-lg btn-success" type="submit"><i
+                                        class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i>
+                                    Reset</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <!--/tab-pane-->
+                <div class="tab-pane" id="settings">
+
+
+                    <hr>
+                    <form class="form" action="##" method="post" id="registrationForm">
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="first_name">
+                                    <h4>First name</h4>
+                                </label>
+                                <input type="text" class="form-control" name="first_name" id="first_name"
+                                    placeholder="first name" title="enter your first name if any.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="last_name">
+                                    <h4>Last name</h4>
+                                </label>
+                                <input type="text" class="form-control" name="last_name" id="last_name"
+                                    placeholder="last name" title="enter your last name if any.">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="phone">
+                                    <h4>Phone</h4>
+                                </label>
+                                <input type="text" class="form-control" name="phone" id="phone"
+                                    placeholder="enter phone" title="enter your phone number if any.">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-6">
+                                <label for="mobile">
+                                    <h4>Mobile</h4>
+                                </label>
+                                <input type="text" class="form-control" name="mobile" id="mobile"
+                                    placeholder="enter mobile number" title="enter your mobile number if any.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="email">
+                                    <h4>Email</h4>
+                                </label>
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="you@email.com" title="enter your email.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="email">
+                                    <h4>Location</h4>
+                                </label>
+                                <input type="email" class="form-control" id="location" placeholder="somewhere"
+                                    title="enter a location">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="password">
+                                    <h4>Password</h4>
+                                </label>
+                                <input type="password" class="form-control" name="password" id="password"
+                                    placeholder="password" title="enter your password.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="password2">
+                                    <h4>Verify</h4>
+                                </label>
+                                <input type="password" class="form-control" name="password2" id="password2"
+                                    placeholder="password2" title="enter your password2.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <br>
+                                <button class="btn btn-lg btn-success pull-right" type="submit"><i
+                                        class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                <!--<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>-->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <!--/tab-pane-->
+        </div>
+        <!--/tab-content-->
+
+    </div>
+    <!--/col-9-->
+</div>

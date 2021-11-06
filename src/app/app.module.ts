@@ -3,14 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { AboutPageComponent } from './components/about-page/about-page.component';
+import { SecretRouteComponent } from './components/secret-route/secret-route.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomePageComponent,
+    AboutPageComponent,
+    SecretRouteComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
